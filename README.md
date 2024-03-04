@@ -20,6 +20,7 @@
       <li>./so_long 'map.ber'</li>
     </ol>
   </h5>
+  <hr>
   <p>
     Thanks for watching my project and trying my game!
   </p>
