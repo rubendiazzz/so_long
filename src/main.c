@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:45:17 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2024/03/04 14:05:36 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2024/03/04 17:08:20 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	main(int ac, char **av)
 	if (ac != 2)
 		return (printf("Exactly 1 map should be passed as an argument!"));
 	data = malloc(sizeof(t_data));
-	// TODO: Handle malloc error with exit handling function
+	if (!data)
+		exit_error("Error", data);
 	// TODO: Read map function
 	// TODO: Allocate game
 	// TODO: Malloc check

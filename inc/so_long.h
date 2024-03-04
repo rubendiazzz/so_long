@@ -81,6 +81,15 @@ typedef struct s_game
 }						t_game;
 
 // Errors
-void					error(void);
+void					exit_error(char *message, t_data *data);
+void					ft_free_matrix(t_data *data, void **matrix);
+void					ft_end_game(t_game *game);
+
+// Key hooks
+void					ft_action(mlx_key_data_t keydata, void *param);
+void					ft_move_up(t_game *game);
+void					ft_move_down(t_game *game);
+void					ft_move_left(t_game *game);
+void					ft_move_right(t_game *game);
 
 #endif
