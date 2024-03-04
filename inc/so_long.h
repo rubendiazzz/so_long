@@ -49,7 +49,7 @@ typedef struct s_data
 
 typedef struct s_textures
 {
-	mlx_texture_t		*floor;
+	mlx_texture_t		*empty;
 	mlx_texture_t		*wall;
 	mlx_texture_t		*collectible;
 	mlx_texture_t		*player;
@@ -59,7 +59,7 @@ typedef struct s_textures
 
 typedef struct s_images
 {
-	mlx_image_t			*floor;
+	mlx_image_t			*empty;
 	mlx_image_t			*wall;
 	mlx_image_t			*collectible;
 	mlx_image_t			*player;
@@ -91,5 +91,14 @@ void					ft_move_up(t_game *game);
 void					ft_move_down(t_game *game);
 void					ft_move_left(t_game *game);
 void					ft_move_right(t_game *game);
+
+// Read Map
+void					read_map(char *map_path, t_data *data);
+
+// Game
+// Init game
+t_game					*ft_init_game(t_data *data);
+// End game
+void					end_game(t_game *game, t_data *data);
 
 #endif
