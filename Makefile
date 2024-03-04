@@ -6,7 +6,7 @@ LIBFT   = ./libft
 HEADERS = -I ./includes -I ${LIBMLX}/include -I ${LIBFT}
 LIBGL   = -lglfw -L"/Users/rdiaz-fr/.brew/opt/glfw/lib"
 LIBS    = ${LIBGL} ${LIBFT}/libft.a ${LIBMLX}/build/libmlx42.a
-SRCS    = main.c key_hooks.c error_handling.c close.c
+SRCS    = ./src/main.c ./src/key_hooks.c ./src/error_handling.c ./src/close.c
 OBJS    = ${SRCS:.c=.o}
 
 all: libmlx libft ${NAME}
