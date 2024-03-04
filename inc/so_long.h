@@ -20,28 +20,13 @@
 
 // Window size
 # define WIDTH 800
-# define HEIGHT 800
+# define HEIGHT 600
 
 // Window title
 # define TITLE "Guatemala"
-
-// Movement
-# define UP 'W'
-# define LEFT 'A'
-# define DOWN 'S'
-# define RIGHT 'D'
-
 // PX SIZE
-# define PX_SIZE 32
+# define PX_SIZE 64
 
-/**
- * An image with an individual buffer that can be rendered.
- * Any value can be modified except the width/height and context.
- *
- * @param width The width of the image.
- * @param height The height of the image.
- * @param pixels The literal pixel data.
- */
 typedef struct s_img
 {
 	const uint32_t		width;
