@@ -22,8 +22,8 @@
 # define WIDTH 800
 # define HEIGHT 600
 
-// Window title
-# define TITLE "Guatemala"
+// Window title 💀
+# define TITLE "Turkish Arruspuchuchu"
 // PX SIZE
 # define PX_SIZE 64
 
