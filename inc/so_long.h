@@ -16,10 +16,12 @@
 /**
  * Includes
  */
+# include "../libft/ft_printf.h"      // Printf library
+# include "../libft/get_next_line.h"  // Get next line library
+# include "../libft/libft.h"          // Libft library
 # include "mlx/include/MLX42/MLX42.h" // MLX42 library
 # include <fcntl.h>                   // File control options
 # include <stdbool.h>                 // Boolean type
-# include <stdio.h>                   // Standard input/output
 # include <stdlib.h>                  // Standard library
 
 /**
@@ -109,23 +111,36 @@ void	ft_move_up(t_game *game);                       // Move up
 void	ft_move_down(t_game *game);                     // Move down
 void	ft_move_left(t_game *game);                     // Move left
 void	ft_move_right(t_game *game);                    // Move right
+void	ft_collect(t_game *game);                       // Collect
+void	ft_remove_collectible(t_game *game);            // Remove collectible
 
 /**
  * Map Functions
  * Such as reading the map, checking if it's valid, etc...
  */
-void	read_map(char *map_path, t_data *data); // Read map
+void	ft_read_map(t_data *data, char **argv);             // Read map
+void	ft_map_check(t_data *data, char **map);             // Map check
+int	ft_allocate_lines(t_data *data, char **argv);        // Allocate lines
+void	ft_playable_check(t_data *data, char **map);        // Playable check
+void	init_explore(t_data *data, int ***visited);         // Init explore
+void	explore(t_data *data, int x, int y, int **visited); // Explore
+void	pec_config_check(t_data *data, char **map);         // PEC config check
 
 /**
  * Game Functions
  * Such ass Init the game or ending it
  * Etc...
  */
-
-// Init game
-t_game	*ft_init_game(t_data *data); // Init the game
-
-// End game
-void	end_game(t_game *game, t_data *data); // Ending the game
+void	ft_init_game(t_game *game, t_data *data);
+// Initiating the game
+void	end_game(t_game *game, t_data *data);
+// Ending the game
+void	ft_get_textures(t_game *game);
+// Get the textures
+void	ft_get_images(t_game *game);
+// Get the images
+void	draw_map(t_data *data, t_game *game, t_images *image); // Draw the map
+void	draw_floor(t_data *data, t_game *game, t_images *image);
+// Draw the floor (empty)
 
 #endif

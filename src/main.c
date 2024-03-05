@@ -12,22 +12,22 @@
 
 #include "../inc/so_long.h"
 
-int	main(int ac, char **av)
+int	main(int argc, char **argv)
 {
 	t_data	*data;
 	t_game	*game;
 
-	if (ac != 2)
-		return (printf("Exactly 1 map should be passed as an argument!"));
+	if (argc != 2)
+		return (ft_printf("Exactly 1 map should be passed as argument"));
 	data = malloc(sizeof(t_data));
 	if (!data)
-		exit_error("Error", data);
-	read_map(av[1], data);
+		exit_error("Malloc error", data);
+	ft_read_map(data, argv);
 	game = malloc(sizeof(t_game));
 	if (!game)
-		exit_error("Error", data);
-	ft_init_game(game);
+		exit_error("Malloc error", data);
+	ft_init_game(game, data);
 	mlx_terminate(game->mlx);
-	end_game(game, data);
+	ft_end_game(game);
 	return (0);
 }

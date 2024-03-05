@@ -1,3 +1,7 @@
 {
-	"cmake.sourceDirectory": "/Users/ruubendiazz/Dev/so_long/inc/mlx"
+	"cmake.sourceDirectory": "/Users/ruubendiazz/Dev/so_long/inc/mlx",
+	"files.associations": {
+		"stdbool.h": "c",
+		"__config": "c"
+	}
 }

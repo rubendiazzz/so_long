@@ -6,7 +6,9 @@ LIBFT   = ./libft
 HEADERS = -I ./includes -I ${LIBMLX}/include -I ${LIBFT}
 LIBGL   = -lglfw -L"/Users/rdiaz-fr/.brew/opt/glfw/lib"
 LIBS    = ${LIBGL} ${LIBFT}/libft.a ${LIBMLX}/build/libmlx42.a
-SRCS    = ./src/main.c ./src/key_hooks.c ./src/error_handling.c ./src/close.c
+SRCS    = ./src/main.c ./src/key_hooks.c ./src/read_map.c ./src/collectibles.c \
+					./src/end_game.c ./src/error_handling.c ./src/init.c ./src/is_playable.c \
+					./src/painting.c
 OBJS    = ${SRCS:.c=.o}
 
 all: libmlx libft ${NAME}
