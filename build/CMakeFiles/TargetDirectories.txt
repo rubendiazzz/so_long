@@ -1,7 +1,0 @@
-/Users/ruubendiazz/Dev/so_long/build/CMakeFiles/mlx42.dir
-/Users/ruubendiazz/Dev/so_long/build/CMakeFiles/edit_cache.dir
-/Users/ruubendiazz/Dev/so_long/build/CMakeFiles/rebuild_cache.dir
-/Users/ruubendiazz/Dev/so_long/build/CMakeFiles/list_install_components.dir
-/Users/ruubendiazz/Dev/so_long/build/CMakeFiles/install.dir
-/Users/ruubendiazz/Dev/so_long/build/CMakeFiles/install/local.dir
-/Users/ruubendiazz/Dev/so_long/build/CMakeFiles/install/strip.dir
