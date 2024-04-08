@@ -1,28 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/08 10:01:42 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2024/04/08 10:11:16 by rdiaz-fr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include "./minilibx_mac/mlx.h"
+#include "./MLX42/include/MLX42/MLX42.h"
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 #define WIDTH 800
 #define HEIGHT 800
 #define TITLE "So Long"
 
-typedef struct s_map {
-	int		width; // Map width
-	int		height; // Map height
-	char	**map; // Map content
-}	t_map;
-
-typedef struct s_game
-{
-	void		*mlx_ptr; // MLX pointer
-	void		*win_ptr; // MLX window pointer
-	void		*textures[5]; // MLX image pointers (on the stack)
-	t_map		*map; // Map pointer (contains map details - preferably kept on the stack)
-}	t_game;
+// Control
+#define DOWN MLX_KEY_S
+#define UP MLX_KEY_W
+#define LEFT MLX_KEY_A
+#define RIGHT MLX_KEY_D
 
 #endif

@@ -1,9 +1,40 @@
-INCLUDES = -I/opt/X11/include -Imlx
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/04/08 10:01:47 by rdiaz-fr          #+#    #+#              #
+#    Updated: 2024/04/08 10:01:48 by rdiaz-fr         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-.c.o:
-	$(CC) $(CFLAGS) -c -o $@ $< $(INCLUDES)
+NAME = so_long
 
-MLX_FLAGS = -Lmlx -lmlx -L/usr/X11/lib -lXext -lX11 -framework OpenGL -framework AppKit
+CC = gcc
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(MLX_FLAGS)
+CFLAGS = -Wall -Wextra -Werror
+
+FRAMEWORKS = -framework Cocoa -framework OpenGL -framework IOKit
+
+LIBRARIES = -Linc/MLX42/build -lmlx42 -L/Users/$(USER)/.brew/opt/glfw/lib -lglfw
+
+SRC = src/main.c
+
+OBJ = $(SRC:.c=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME) $(FRAMEWORKS) $(LIBRARIES)
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
