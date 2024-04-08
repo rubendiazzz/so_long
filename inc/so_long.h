@@ -6,13 +6,14 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 10:01:42 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2024/04/08 10:46:48 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2024/04/08 11:06:01 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+// Includes
 #include "./MLX42/include/MLX42/MLX42.h"
 #include "./libft/libft.h"
 #include <stdlib.h>
