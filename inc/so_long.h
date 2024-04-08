@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 10:01:42 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2024/04/08 10:11:16 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2024/04/08 10:31:15 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 
+// Window
 #define WIDTH 800
 #define HEIGHT 800
 #define TITLE "So Long"
