@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 10:01:42 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2024/04/08 10:46:48 by rdiaz-fr         ###   ########.fr       */
+/*   Created: 2023/09/22 13:13:29 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2023/09/23 00:28:06 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-#include "./MLX42/include/MLX42/MLX42.h"
-#include "./libft/libft.h"
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdbool.h>
-#include <stdio.h>
-
-// Window
-#define WIDTH 1280
-#define HEIGHT 720
-#define TITLE "So Long"
-
-// Control
-#define DOWN MLX_KEY_S
-#define UP MLX_KEY_W
-#define LEFT MLX_KEY_A
-#define RIGHT MLX_KEY_D
-
-#endif
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	new->next = *lst;
+	*lst = new;
+}

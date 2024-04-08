@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 10:01:42 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2024/04/08 10:46:48 by rdiaz-fr         ###   ########.fr       */
+/*   Created: 2023/09/15 11:10:20 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2023/09/27 12:27:46 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-#include "./MLX42/include/MLX42/MLX42.h"
-#include "./libft/libft.h"
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdbool.h>
-#include <stdio.h>
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	neg;
+	int	res;
 
-// Window
-#define WIDTH 1280
-#define HEIGHT 720
-#define TITLE "So Long"
-
-// Control
-#define DOWN MLX_KEY_S
-#define UP MLX_KEY_W
-#define LEFT MLX_KEY_A
-#define RIGHT MLX_KEY_D
-
-#endif
+	i = 0;
+	neg = 1;
+	res = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			neg = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + (str[i] - '0');
+		i++;
+	}
+	return (res * neg);
+}

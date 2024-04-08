@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 10:01:42 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2024/04/08 10:46:48 by rdiaz-fr         ###   ########.fr       */
+/*   Created: 2023/09/22 12:10:37 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2023/09/22 12:14:36 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-#include "./MLX42/include/MLX42/MLX42.h"
-#include "./libft/libft.h"
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdbool.h>
-#include <stdio.h>
-
-// Window
-#define WIDTH 1280
-#define HEIGHT 720
-#define TITLE "So Long"
-
-// Control
-#define DOWN MLX_KEY_S
-#define UP MLX_KEY_W
-#define LEFT MLX_KEY_A
-#define RIGHT MLX_KEY_D
-
-#endif
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else
+	{
+		if (n < 0)
+		{
+			ft_putchar_fd('-', fd);
+			n = -n;
+		}
+		if (n >= 10)
+		{
+			ft_putnbr_fd(n / 10, fd);
+		}
+		ft_putchar_fd((n % 10) + '0', fd);
+	}
+}

@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 10:01:42 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2024/04/08 10:46:48 by rdiaz-fr         ###   ########.fr       */
+/*   Created: 2023/09/23 00:43:37 by rdiaz-fr          #+#    #+#             */
+/*   Updated: 2023/09/23 00:44:55 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-#include "./MLX42/include/MLX42/MLX42.h"
-#include "./libft/libft.h"
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdbool.h>
-#include <stdio.h>
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list	*last;
 
-// Window
-#define WIDTH 1280
-#define HEIGHT 720
-#define TITLE "So Long"
-
-// Control
-#define DOWN MLX_KEY_S
-#define UP MLX_KEY_W
-#define LEFT MLX_KEY_A
-#define RIGHT MLX_KEY_D
-
-#endif
+	last = lst;
+	if (last)
+	{
+		while (last->next)
+			last = last->next;
+	}
+	return (last);
+}

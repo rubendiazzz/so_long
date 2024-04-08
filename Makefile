@@ -5,36 +5,57 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/08 10:01:47 by rdiaz-fr          #+#    #+#              #
-#    Updated: 2024/04/08 10:01:48 by rdiaz-fr         ###   ########.fr        #
+#    Created: 2024/04/08 10:44:09 by rdiaz-fr          #+#    #+#              #
+#    Updated: 2024/04/08 10:58:42 by rdiaz-fr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = so_long
-
-CC = gcc
-
+NAME    = so_long
 CFLAGS = -Wall -Wextra -Werror
+LIBMLX  = ./inc/MLX42
+LIBFT   = ./inc/libft
 
-FRAMEWORKS = -framework Cocoa -framework OpenGL -framework IOKit
+HEADERS = -I ./includes -I ${LIBMLX}/include -I ${LIBFT}
+LIBGL   = -lglfw -L"/Users/$(USER)/.brew/opt/glfw/lib"
+LIBS    = ${LIBGL} ${LIBFT}/libft.a ${LIBMLX}/build/libmlx42.a
+SRCS    = ./src/main.c
+OBJS    = ${SRCS:.c=.o}
 
-LIBRARIES = -Linc/MLX42/build -lmlx42 -L/Users/$(USER)/.brew/opt/glfw/lib -lglfw
+all: libmlx libft ${NAME}
 
-SRC = src/main.c
+libft:
+	@echo "Compiling libft..."
+	@${MAKE} -s -C ${LIBFT}
+	@echo "libft compilation complete."
 
-OBJ = $(SRC:.c=.o)
+libmlx:
+	@echo "Compiling MLX42..."
+	@rm -rf $(LIBMLX)/build
+	@cd $(LIBMLX) && mkdir -p build && cd build && cmake .. > /dev/null && make -s -j4 > /dev/null
+	@echo "MLX42 compilation complete."
 
-all: $(NAME)
+%.o: %.c
+	@echo "Compiling $<..."
+	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(SRC) -o $(NAME) $(FRAMEWORKS) $(LIBRARIES)
+${NAME}: ${OBJS}
+	@echo "Linking $@..."
+	@$(CC) $(OBJS) $(LIBS) $(HEADERS) -o $(NAME)
+	@echo "$@ compilation complete."
 
 clean:
-	rm -f $(OBJ)
+	@echo "Cleaning up object files..."
+	@rm -f ${OBJS}
+	@${MAKE} -s -C ${LIBFT} clean
+	@${MAKE} -s -C ${LIBMLX}/build clean
+	@echo "Cleanup complete."
 
 fclean: clean
-	rm -f $(NAME)
+	@echo "Cleaning up executable and libraries..."
+	@rm -f ${NAME}
+	@${MAKE} -s -C ${LIBFT} fclean
+	@echo "Cleanup complete."
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re libmlx libft
