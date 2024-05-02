@@ -6,7 +6,7 @@
 #    By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/08 10:44:09 by rdiaz-fr          #+#    #+#              #
-#    Updated: 2024/04/08 10:58:42 by rdiaz-fr         ###   ########.fr        #
+#    Updated: 2024/04/18 12:45:07 by rdiaz-fr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ CFLAGS = -Wall -Wextra -Werror
 LIBMLX  = ./inc/MLX42
 LIBFT   = ./inc/libft
 
-HEADERS = -I ./includes -I ${LIBMLX}/include -I ${LIBFT}
-LIBGL   = -lglfw -L"/Users/$(USER)/.brew/opt/glfw/lib"
+HEADERS = -I ./inc -I ${LIBMLX}/include -I ${LIBFT}
+LIBGL   = -lglfw -L"/Users/$(USER)/.brew/Cellar/glfw/3.4/lib"
 LIBS    = ${LIBGL} ${LIBFT}/libft.a ${LIBMLX}/build/libmlx42.a
 SRCS    = ./src/main.c
 OBJS    = ${SRCS:.c=.o}

@@ -6,7 +6,7 @@
 /*   By: rdiaz-fr <rdiaz-fr@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 10:01:42 by rdiaz-fr          #+#    #+#             */
-/*   Updated: 2024/04/08 11:06:01 by rdiaz-fr         ###   ########.fr       */
+/*   Updated: 2024/04/30 11:18:17 by rdiaz-fr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 #include <stdio.h>
 
 // Window
-#define WIDTH 1280
-#define HEIGHT 720
+#define WIDTH 1920
+#define HEIGHT 1080
 #define TITLE "So Long"
 
 // Control
@@ -32,5 +32,14 @@
 #define UP MLX_KEY_W
 #define LEFT MLX_KEY_A
 #define RIGHT MLX_KEY_D
+
+// Character
+#define CHARACTER "./sprites/character.png"
+
+// Background
+#define BACKGROUND "./sprites/floor.png"
+
+// Wall
+#define WALL "./sprites/wall.png"
 
 #endif
